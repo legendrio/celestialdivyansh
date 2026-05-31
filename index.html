@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Celestial Divyansh — Premium Vedic Astrology & Wisdom Sanctuary</title>
+  <meta name="description" content="Explore the timeless geometry of the cosmos with Acharya Divyansh. Premium Vedic Astrology guides, remedies, and calculations." />
+  
+  <!-- Import Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      /* Light Mode Palette: Light lavender background, Dark plum typography, Warm gold accents */
+      --bg-color: hsl(264, 30%, 96%);          
+      --card-bg: rgba(255, 255, 255, 0.75);     
+      --card-border: rgba(41, 18, 43, 0.1);
+      --text-primary: hsl(295, 45%, 13%);      
+      --text-secondary: hsl(295, 15%, 38%);    
+      --accent-color: hsl(43, 65%, 48%);       
+      --accent-hover: hsl(43, 75%, 40%);
+      --accent-glow: rgba(197, 160, 89, 0.2);
+      
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.07);
+      --radius-lg: 1.25rem;
+      --radius-md: 0.75rem;
+      --transition-speed: 0.4s;
+      --font-heading: 'Cinzel', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-serif: 'Playfair Display', serif;
+    }
+
+    body.dark-theme {
+      /* Dark Mode Palette: Midnight Blue background, Warm Ivory typography, Soft Silver-Gray accents */
+      --bg-color: hsl(226, 45%, 7%);           
+      --card-bg: rgba(15, 23, 42, 0.65);        
+      --card-border: rgba(162, 168, 182, 0.15);
+      --text-primary: hsl(20, 25%, 95%);       
+      --text-secondary: hsl(224, 12%, 75%);    
+      --accent-color: hsl(224, 15%, 68%);      
+      --accent-hover: hsl(224, 20%, 82%);
+      --accent-glow: rgba(162, 168, 182, 0.25);
+      
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.75;
+      overflow-x: hidden;
+      transition: background-color var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+                  color var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* --- Container & Layout Elements --- */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    /* --- Navigation Bar --- */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 1000;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      transition: background var(--transition-speed), border var(--transition-speed);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+    }
+
+    .logo-icon-svg {
+      width: 32px;
+      height: 32px;
+      fill: none;
+      stroke: var(--accent-color);
+      stroke-width: 1.5;
+      transition: stroke var(--transition-speed), transform var(--transition-speed);
+    }
+
+    .logo-container:hover .logo-icon-svg {
+      transform: rotate(30deg);
+    }
+
+    .logo-text {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .logo-text span {
+      color: var(--accent-color);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      padding: 0.5rem 0.75rem;
+      position: relative;
+      transition: color var(--transition-speed);
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent-color);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 80%;
+      left: 10%;
+    }
+
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 1100;
+    }
+
+    .mobile-nav-toggle span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background-color: var(--text-primary);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* --- Hero Section & Toggle --- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 65%);
+    }
+
+    .theme-toggle-wrapper {
+      margin-bottom: 2rem;
+      perspective: 1000px;
+    }
+
+    .cosmic-toggle-btn {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-color);
+      background: var(--card-bg);
+      box-shadow: 0 0 40px var(--accent-glow), var(--shadow-lg);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                  box-shadow var(--transition-speed), 
+                  border var(--transition-speed);
+      position: relative;
+    }
+
+    .cosmic-toggle-btn:hover {
+      transform: scale(1.05) rotate(15deg);
+      box-shadow: 0 0 50px var(--accent-glow), var(--shadow-lg);
+    }
+
+    .cosmic-toggle-btn:active {
+      transform: scale(0.95);
+    }
+
+    .cosmic-icon {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                  transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      fill: none;
+      stroke: var(--accent-color);
+      stroke-width: 1.5;
+    }
+
+    .sun-svg {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    .moon-svg {
+      opacity: 0;
+      transform: rotate(-180deg);
+    }
+
+    body.dark-theme .sun-svg {
+      opacity: 0;
+      transform: rotate(180deg);
+    }
+
+    body.dark-theme .moon-svg {
+      opacity: 1;
+      transform: rotate(0);
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .hero-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent-color);
+      text-transform: none;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      max-width: 750px;
+      margin: 0 auto 3rem;
+      color: var(--text-secondary);
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-premium {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 2.5rem;
+      border-radius: 100px;
+      border: 1px solid var(--accent-color);
+      background: var(--card-bg);
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-premium:hover {
+      background: var(--accent-color);
+      color: var(--bg-color) !important;
+      box-shadow: 0 0 30px var(--accent-glow);
+      transform: translateY(-3px);
+    }
+
+    /* --- Sections & Cards Layout --- */
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .section-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent-color);
+      text-transform: none;
+    }
+
+    .section-description {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      font-weight: 400;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                  border var(--transition-speed),
+                  box-shadow var(--transition-speed);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+      opacity: 0;
+      transition: opacity var(--transition-speed);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-color);
+      box-shadow: 0 15px 35px var(--accent-glow), var(--shadow-lg);
+    }
+
+    .glass-card:hover::before {
+      opacity: 1;
+    }
+
+    .page-view {
+      display: none;
+      min-height: 100vh;
+      padding-top: 80px;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    .page-view.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- Astrology shapes Humanity --- */
+    .psychology-section {
+      background: var(--card-bg);
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      margin-top: 2rem;
+      padding: 6rem 0;
+    }
+
+    .impacts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .impact-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .impact-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-color);
+      border-radius: 50%;
+      color: var(--accent-color);
+      font-size: 1.25rem;
+    }
+
+    .impact-title {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .impact-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .cta-box {
+      text-align: center;
+      background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%);
+      padding: 3rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-box h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* --- Main Astrologer Section --- */
+    .astrologer-section {
+      padding: 6rem 0;
+    }
+
+    .astrologer-flex {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .astrologer-img-container {
+      flex: 1.2;
+      position: relative;
+      max-width: 450px;
+    }
+
+    .astrologer-img-frame {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--accent-color);
+      background: var(--card-bg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .astrologer-svg-fallback {
+      width: 70%;
+      height: 70%;
+      stroke: var(--accent-color);
+      stroke-width: 1;
+      fill: none;
+      opacity: 0.8;
+    }
+
+    .astrologer-img-container::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      z-index: 1;
+      background-color: var(--accent-glow);
+    }
+
+    .astrologer-info {
+      flex: 1.8;
+    }
+
+    .astrologer-name {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .astrologer-title {
+      color: var(--accent-color);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .astrologer-bio {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .astrologer-bullets {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .astrologer-bullets li {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .astrologer-bullets li::before {
+      content: '✦';
+      color: var(--accent-color);
+    }
+
+    /* --- Stats Section --- */
+    .stats-section {
+      padding: 4rem 0 6rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 2rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+    }
+
+    /* --- Rashis View Sub-styles --- */
+    .rashi-badge-container {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .element-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid;
+    }
+
+    .element-fire {
+      color: hsl(12, 85%, 50%);
+      background: rgba(239, 68, 68, 0.08);
+      border-color: rgba(239, 68, 68, 0.2);
+    }
+
+    .element-earth {
+      color: hsl(140, 60%, 35%);
+      background: rgba(34, 197, 94, 0.08);
+      border-color: rgba(34, 197, 94, 0.2);
+    }
+
+    .element-air {
+      color: hsl(199, 85%, 45%);
+      background: rgba(56, 189, 248, 0.08);
+      border-color: rgba(56, 189, 248, 0.2);
+    }
+
+    .element-water {
+      color: hsl(220, 85%, 55%);
+      background: rgba(59, 130, 246, 0.08);
+      border-color: rgba(59, 130, 246, 0.2);
+    }
+
+    .rashi-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .rashi-sanskrit {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .rashi-english {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.25rem;
+    }
+
+    .rashi-symbol {
+      font-size: 2rem;
+      line-height: 1;
+      opacity: 0.75;
+      transition: opacity 0.3s;
+    }
+
+    .glass-card:hover .rashi-symbol {
+      opacity: 1;
+      color: var(--accent-color);
+    }
+
+    .rashi-details-list {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-border);
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .rashi-detail-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .rashi-detail-label {
+      color: var(--text-secondary);
+    }
+
+    .rashi-detail-val {
+      font-weight: 500;
+    }
+
+    /* --- Grahas View Sub-styles --- */
+    .grahas-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .graha-card-horizontal {
+      display: flex;
+      gap: 2.5rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                  border var(--transition-speed);
+    }
+
+    .graha-card-horizontal:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-color);
+      box-shadow: var(--shadow-md);
+    }
+
+    .graha-left-panel {
+      width: 250px;
+      flex-shrink: 0;
+      background: var(--accent-glow);
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-right: 1px solid var(--card-border);
+      position: relative;
+    }
+
+    .graha-circle-symbol {
+      font-size: 3rem;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-color);
+      background: var(--card-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--accent-color);
+    }
+
+    .graha-sanskrit-name {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .graha-english-name {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .graha-right-panel {
+      flex: 1;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .graha-bio-text {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+
+    .graha-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .graha-meta-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+    }
+
+    .graha-meta-label {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .graha-meta-value {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .graha-remedies-box {
+      background: var(--accent-glow);
+      border: 1px dashed var(--accent-color);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+    }
+
+    .remedies-title {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+      color: var(--accent-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .remedies-list {
+      padding-left: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    /* --- Bhavas (Houses) View Sub-styles --- */
+    .bhavas-container-flex {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .chart-card-wrapper {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .kundali-svg-container {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 1;
+      position: relative;
+    }
+
+    .kundali-svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--accent-color);
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .kundali-house-btn {
+      cursor: pointer;
+      pointer-events: fill;
+      transition: fill 0.3s, opacity 0.3s;
+    }
+
+    .kundali-house-btn:hover {
+      fill: var(--accent-glow);
+    }
+
+    .kundali-house-btn.active {
+      fill: var(--accent-glow);
+      stroke-width: 2.5;
+    }
+
+    .kundali-text {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 16px;
+      fill: var(--text-primary);
+      text-anchor: middle;
+      dominant-baseline: middle;
+      pointer-events: none;
+    }
+
+    .bhavas-list-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .bhava-detail-card {
+      padding: 2.5rem;
+    }
+
+    .bhava-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 1rem;
+    }
+
+    .bhava-name-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .bhava-number-badge {
+      width: 45px;
+      height: 45px;
+      border-radius: var(--radius-md);
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-color);
+      color: var(--accent-color);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+    }
+
+    .bhava-sanskrit {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .bhava-english {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.15rem;
+    }
+
+    .house-goal-badge {
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid;
+    }
+
+    .goal-dharma {
+      color: hsl(43, 65%, 45%);
+      background: rgba(197, 160, 89, 0.08);
+      border-color: rgba(197, 160, 89, 0.2);
+    }
+
+    .goal-artha {
+      color: hsl(140, 60%, 35%);
+      background: rgba(34, 197, 94, 0.08);
+      border-color: rgba(34, 197, 94, 0.2);
+    }
+
+    .goal-kama {
+      color: hsl(354, 70%, 45%);
+      background: rgba(239, 68, 68, 0.08);
+      border-color: rgba(239, 68, 68, 0.2);
+    }
+
+    .goal-moksha {
+      color: hsl(270, 50%, 50%);
+      background: rgba(139, 92, 246, 0.08);
+      border-color: rgba(139, 92, 246, 0.2);
+    }
+
+    .bhava-grid-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .bhava-stat-item {
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+    }
+
+    body.dark-theme .bhava-stat-item {
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .bhava-stat-label {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .bhava-stat-val {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    /* --- Nakshatras Filter Bar & Cards --- */
+    .filter-bar-wrapper {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 100px;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+      gap: 1rem;
+    }
+
+    .filter-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding-left: 1rem;
+      color: var(--accent-color);
+      flex-shrink: 0;
+    }
+
+    .filter-options-scroll {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.25rem 0;
+      scrollbar-width: none;
+    }
+
+    .filter-options-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      background: none;
+      border: 1px solid transparent;
+      padding: 0.4rem 1.1rem;
+      border-radius: 100px;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-secondary);
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+
+    .filter-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--card-border);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-color);
+      color: var(--bg-color) !important;
+      border-color: var(--accent-color);
+    }
+
+    .nak-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .nak-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .nak-id-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      background: var(--accent-glow);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--accent-color);
+    }
+
+    .nak-title-box {
+      margin-top: 0.5rem;
+    }
+
+    .nak-sanskrit-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .nak-translit-name {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .nak-rashi-tag {
+      background: var(--accent-glow);
+      color: var(--text-primary);
+      border: 1px solid var(--card-border);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .nak-body {
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .nak-meta-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .nak-meta-label {
+      color: var(--text-secondary);
+    }
+
+    .nak-meta-val {
+      font-weight: 500;
+    }
+
+    /* --- Wisdom (Systems & Remedies) Sub-styles --- */
+    .wisdom-layouts {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .wisdom-topic-card {
+      padding: 3rem;
+    }
+
+    .wisdom-topic-header {
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .wisdom-topic-sanskrit {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--accent-color);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .wisdom-topic-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .wisdom-topic-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .wisdom-subgrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .wisdom-point-box {
+      background: rgba(255, 255, 255, 0.3);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    body.dark-theme .wisdom-point-box {
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .wisdom-point-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .wisdom-point-title::before {
+      content: '✦';
+      color: var(--accent-color);
+    }
+
+    .wisdom-point-body {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* --- Numerology Calculator & Cards --- */
+    .numerology-calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      margin-bottom: 4rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .calc-instructions {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .calc-step {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-color);
+      background: var(--accent-glow);
+      color: var(--accent-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .step-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .step-text strong {
+      color: var(--text-primary);
+    }
+
+    .calc-interactive-box {
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-color);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .calc-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .calc-label {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+    }
+
+    .calc-input {
+      padding: 0.75rem 1.25rem;
+      border-radius: 100px;
+      border: 1px solid var(--card-border);
+      background: var(--card-bg);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      text-align: center;
+      outline: none;
+      transition: border-color var(--transition-speed);
+    }
+
+    .calc-input:focus {
+      border-color: var(--accent-color);
+    }
+
+    .calc-result-box {
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .calc-result-number {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--accent-color);
+      line-height: 1;
+    }
+
+    .calc-result-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .num-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .num-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .num-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-color);
+      background: var(--accent-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent-color);
+    }
+
+    .num-ruler-tag {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .num-traits {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .num-metas {
+      border-top: 1px solid var(--card-border);
+      padding-top: 1.25rem;
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .num-meta-row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .num-meta-label {
+      color: var(--text-secondary);
+    }
+
+    .num-meta-val {
+      font-weight: 500;
+    }
+
+    /* --- Blog Layout & Content --- */
+    .blog-layout {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .blog-post-card {
+      padding: 4rem;
+    }
+
+    .blog-meta-data {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-color);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .blog-post-title {
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 1.25;
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+    }
+
+    .blog-rich-content {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-primary);
+      line-height: 1.85;
+    }
+
+    .blog-rich-content p {
+      margin-bottom: 1.75rem;
+    }
+
+    .blog-rich-content .drop-cap::first-letter {
+      font-family: var(--font-heading);
+      font-size: 3.5rem;
+      float: left;
+      line-height: 0.8;
+      padding-top: 4px;
+      padding-right: 8px;
+      color: var(--accent-color);
+      font-weight: 900;
+    }
+
+    .blog-quote-box {
+      background: var(--accent-glow);
+      border-left: 4px solid var(--accent-color);
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+    }
+
+    .blog-rich-content ul {
+      margin: 0 0 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .blog-rich-content ul li::marker {
+      color: var(--accent-color);
+    }
+
+    /* --- Footer --- */
+    footer {
+      background: var(--card-bg);
+      border-top: 1px solid var(--card-border);
+      padding: 5rem 2rem 3rem;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: background var(--transition-speed), border var(--transition-speed);
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo span {
+      color: var(--accent-color);
+    }
+
+    .footer-social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .social-icon-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      transition: all 0.3s;
+      background: var(--card-bg);
+    }
+
+    .social-icon-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+      transition: fill 0.3s;
+    }
+
+    .social-icon-btn:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px var(--accent-glow);
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .footer-copy span {
+      color: var(--accent-color);
+    }
+
+    /* --- Responsive Queries --- */
+    @media (max-width: 992px) {
+      header {
+        padding: 0 1.5rem;
+      }
+      .astrologer-flex {
+        flex-direction: column;
+        gap: 3rem;
+      }
+      .astrologer-img-container {
+        max-width: 350px;
+      }
+      .bhavas-container-flex {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .chart-card-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .calc-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--bg-color);
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+        align-items: center;
+        justify-content: flex-start;
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        border-top: 1px solid var(--card-border);
+        z-index: 999;
+        display: none;
+      }
+      nav.mobile-open {
+        display: flex;
+        transform: translateX(0);
+      }
+      .nav-link {
+        font-size: 1.1rem;
+      }
+      .nav-link::after {
+        display: none;
+      }
+      header {
+        height: 70px;
+      }
+      .mobile-nav-toggle {
+        display: block;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .graha-card-horizontal {
+        flex-direction: column;
+      }
+      .graha-left-panel {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--card-border);
+        padding: 2.5rem 1.5rem;
+      }
+      .graha-right-panel {
+        padding: 2rem;
+      }
+      .blog-post-card {
+        padding: 2rem;
+      }
+      .astrologer-bullets {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <header>
+    <div class="logo-container" onclick="showPage('home')">
+      <svg class="logo-icon-svg" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" stroke-dasharray="2,2" />
+        <circle cx="50" cy="50" r="28" />
+        <polygon points="50,15 54,32 70,30 57,41 68,57 50,47 32,57 43,41 30,30 46,32" />
+        <circle cx="50" cy="50" r="4" fill="currentColor" />
+      </svg>
+      <h1 class="logo-text">Celestial <span>Divyansh</span></h1>
+    </div>
+    
+    <nav id="navbar-links">
+      <a href="#" class="nav-link active" onclick="showPage('home'); return false;">Home</a>
+      <a href="#" class="nav-link" onclick="showPage('rashis'); return false;">Rashis</a>
+      <a href="#" class="nav-link" onclick="showPage('grahas'); return false;">Grahas</a>
+      <a href="#" class="nav-link" onclick="showPage('bhavas'); return false;">Bhavas</a>
+      <a href="#" class="nav-link" onclick="showPage('nakshatras'); return false;">Nakshatras</a>
+      <a href="#" class="nav-link" onclick="showPage('wisdom'); return false;">Wisdom</a>
+      <a href="#" class="nav-link" onclick="showPage('numerology'); return false;">Numerology</a>
+      <a href="#" class="nav-link" onclick="showPage('blog'); return false;">Blog</a>
+    </nav>
+    
+    <button class="mobile-nav-toggle" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- ==================== 1. HOME PAGE VIEW ==================== -->
+  <main id="page-home" class="page-view active">
+    <section class="hero">
+      <div class="theme-toggle-wrapper">
+        <button class="cosmic-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Theme Mode">
+          <!-- Sun SVG (Revealed in Light Mode) -->
+          <svg class="cosmic-icon sun-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="18" fill="none" stroke-width="2" />
+            <circle cx="50" cy="50" r="12" fill="currentColor" opacity="0.1" />
+            <line x1="50" y1="8" x2="50" y2="18" stroke-width="2.5" stroke-linecap="round" />
+            <line x1="50" y1="82" x2="50" y2="92" stroke-width="2.5" stroke-linecap="round" />
+            <line x1="8" y1="50" x2="18" y2="50" stroke-width="2.5" stroke-linecap="round" />
+            <line x1="82" y1="50" x2="92" y2="50" stroke-width="2.5" stroke-linecap="round" />
+            <line x1="20.5" y1="20.5" x2="27.5" y2="27.5" stroke-width="2.5" stroke-linecap="round" />
+            <line x1="72.5" y1="72.5" x2="79.5" y2="79.5" stroke-width="2.5" stroke-linecap="round" />
+            <line x1="20.5" y1="79.5" x2="27.5" y2="72.5" stroke-width="2.5" stroke-linecap="round" />
+            <line x1="72.5" y1="27.5" x2="79.5" y2="20.5" stroke-width="2.5" stroke-linecap="round" />
+            <circle cx="50" cy="50" r="23" stroke-width="0.5" stroke-dasharray="1,2" />
+          </svg>
+          <!-- Moon SVG (Revealed in Dark Mode) -->
+          <svg class="cosmic-icon moon-svg" viewBox="0 0 100 100">
+            <path d="M 60 25 A 28 28 0 1 0 75 60 A 22 22 0 1 1 60 25 Z" fill="none" stroke-width="2" stroke-linejoin="round" />
+            <circle cx="42" cy="50" r="1.5" fill="currentColor" />
+            <circle cx="48" cy="38" r="1" fill="currentColor" />
+            <circle cx="34" cy="60" r="2" fill="currentColor" opacity="0.6" />
+            <polygon points="65,18 67,22 71,22 68,25 69,29 65,27 61,29 62,25 59,22 63,22" fill="currentColor" stroke="none" opacity="0.7" />
+            <polygon points="32,25 33,28 36,28 34,30 35,33 32,31 29,33 30,30 28,28 31,28" fill="currentColor" stroke="none" opacity="0.5" />
+          </svg>
+        </button>
+      </div>
+      <h2 class="hero-title">Celestial <em>Divyansh</em></h2>
+      <p class="hero-subtitle">A digital sanctuary for seekers of Vedic wisdom. Click the Sun above to toggle theme modes and begin exploring the cosmic architecture.</p>
+      <button class="btn-premium" onclick="showPage('rashis')">Explore the Cosmos <span>✦</span></button>
+    </section>
+
+    <!-- Psychological Explanations -->
+    <section class="psychology-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">The Mirror of the Mind</span>
+          <h2 class="section-title">How Astrology Shapes <em>Humans</em></h2>
+          <p class="section-description">Exploring the psychological connection between cosmic structures and human introspection.</p>
+        </div>
+        
+        <div class="impacts-grid">
+          <div class="glass-card impact-card">
+            <div class="impact-icon">⚓</div>
+            <h3 class="impact-title">Psychological Comfort</h3>
+            <p class="impact-desc">Life's storms feel manageable when framed in cyclic progressions. Knowing that structural delays are governed by karmic phases (Dashas) grants therapeutic comfort and patience.</p>
+          </div>
+          <div class="glass-card impact-card">
+            <div class="impact-icon">🧭</div>
+            <h3 class="impact-title">Self-Guidance</h3>
+            <p class="impact-desc">The natal chart details default habits and shadow dynamics, acting as a mirror for personal values, psychological traits, and mindful redirects.</p>
+          </div>
+          <div class="glass-card impact-card">
+            <div class="impact-icon">🪞</div>
+            <h3 class="impact-title">The Barnum Effect</h3>
+            <p class="impact-desc">Broad, universal descriptions offer a soft doorway to deep self-reflection, leading seekers to uncover and organize personal goals within astrological frameworks.</p>
+          </div>
+          <div class="glass-card impact-card">
+            <div class="impact-icon">🌱</div>
+            <h3 class="impact-title">Self-Fulfilling Prophecy</h3>
+            <p class="impact-desc">Anticipating supportive planetary transits aligns our attention. This positive mental framework primes us to act on and capture real-life opportunities.</p>
+          </div>
+          <div class="glass-card impact-card">
+            <div class="impact-icon">🤝</div>
+            <h3 class="impact-title">Social & Emotional Impact</h3>
+            <p class="impact-desc">Categorizing personalities through elements (Fire, Air, Water, Earth) eases relational strain, raising empathy for varying communication preferences.</p>
+          </div>
+          <div class="glass-card impact-card">
+            <div class="impact-icon">🎨</div>
+            <h3 class="impact-title">Colour Psychology</h3>
+            <p class="impact-desc">Remedies use specific colors, metals, and gemstones associated with planetary frequencies to alter visual environments and regulate emotional states.</p>
+          </div>
+        </div>
+        
+        <div class="cta-box">
+          <h3>Align Your Personal Universe</h3>
+          <p>Book a detailed, customized chart mapping and advice call with Acharya Divyansh via the consultation sheet.</p>
+          <a href="https://forms.gle/Wqhj4EF2BuErbWfb7" target="_blank" rel="noopener noreferrer" class="btn-premium">Book a Consultation <span>✦</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Astrologer Bio -->
+    <section class="astrologer-section">
+      <div class="container">
+        <div class="astrologer-flex">
+          <div class="astrologer-img-container">
+            <div class="astrologer-img-frame">
+              <svg class="astrologer-svg-fallback" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" stroke-dasharray="1,3" />
+                <polygon points="50,5 95,50 50,95 5,50" />
+                <circle cx="50" cy="50" r="30" />
+                <path d="M 50 10 L 50 90 M 10 50 L 90 50" stroke-dasharray="2,2" />
+                <circle cx="50" cy="50" r="4" fill="currentColor" />
+              </svg>
+            </div>
+          </div>
+          <div class="astrologer-info">
+            <span class="eyebrow">The Counselor</span>
+            <h2 class="astrologer-name">Acharya Divyansh</h2>
+            <div class="astrologer-title">Vedic Astrologer & Kundali Advisor</div>
+            <p class="astrologer-bio">Blending traditional Sanskrit scriptural expertise with modern analytical psychology, Acharya Divyansh reads your birth chart as a dynamic roadmap rather than static fate. His advisory style aims to empower decisions, resolve friction points, and provide realistic karmic remedies.</p>
+            <ul class="astrologer-bullets">
+              <li>Classical Vedic Training</li>
+              <li>Intuitive Prashna Reading</li>
+              <li>Pragmatic Remedial Action</li>
+              <li>Empathetic Life Guidance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">4.9★</div>
+            <div class="stat-label">Client Rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1.5K+</div>
+            <div class="stat-label">Reports Delivered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 2. RASHIS VIEW ==================== -->
+  <main id="page-rashis" class="page-view">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Twelve Signs</span>
+        <h2 class="section-title">The Zodiac <em>Rashis</em></h2>
+        <p class="section-description">Each zodiac sign governs a unique filter of consciousness, influencing the behavior of planets crossing their sky sectors.</p>
+      </div>
+      <div class="card-grid" id="rashis-list-container"></div>
+    </div>
+  </main>
+
+  <!-- ==================== 3. GRAHAS VIEW ==================== -->
+  <main id="page-grahas" class="page-view">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Cosmic Vectors</span>
+        <h2 class="section-title">The Nine <em>Grahas</em></h2>
+        <p class="section-description">Planets are cosmic portals of karma. Explore their gemstones, domains, and practical home remedies.</p>
+      </div>
+      <div class="grahas-grid" id="grahas-list-container"></div>
+    </div>
+  </main>
+
+  <!-- ==================== 4. BHAVAS VIEW ==================== -->
+  <main id="page-bhavas" class="page-view">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Lifecycle Houses</span>
+        <h2 class="section-title">The Twelve <em>Bhavas</em></h2>
+        <p class="section-description">Click on the North Indian Kundali map sectors on the left to display detailed house definitions and Purushartha categorizations.</p>
+      </div>
+      
+      <div class="bhavas-container-flex">
+        <!-- Interactive Chart Map -->
+        <div class="chart-card-wrapper">
+          <div class="kundali-svg-container">
+            <svg class="kundali-svg" viewBox="0 0 400 400">
+              <rect x="0" y="0" width="400" height="400" />
+              <line x1="0" y1="0" x2="400" y2="400" />
+              <line x1="0" y1="400" x2="400" y2="0" />
+              <line x1="200" y1="0" x2="400" y2="200" />
+              <line x1="400" y1="200" x2="200" y2="400" />
+              <line x1="200" y1="400" x2="0" y2="200" />
+              <line x1="0" y1="200" x2="200" y2="0" />
+              
+              <polygon class="kundali-house-btn active" data-house="1" points="200,0 300,100 200,200 100,100" onclick="updateBhavaDetails(1)" />
+              <text class="kundali-text" x="200" y="100">1</text>
+              <polygon class="kundali-house-btn" data-house="2" points="0,0 200,0 100,100" onclick="updateBhavaDetails(2)" />
+              <text class="kundali-text" x="100" y="38">2</text>
+              <polygon class="kundali-house-btn" data-house="3" points="0,0 100,100 0,200" onclick="updateBhavaDetails(3)" />
+              <text class="kundali-text" x="38" y="100">3</text>
+              <polygon class="kundali-house-btn" data-house="4" points="100,100 0,200 100,300 200,200" onclick="updateBhavaDetails(4)" />
+              <text class="kundali-text" x="100" y="200">4</text>
+              <polygon class="kundali-house-btn" data-house="5" points="0,200 100,300 0,400" onclick="updateBhavaDetails(5)" />
+              <text class="kundali-text" x="38" y="300">5</text>
+              <polygon class="kundali-house-btn" data-house="6" points="0,400 100,300 200,400" onclick="updateBhavaDetails(6)" />
+              <text class="kundali-text" x="100" y="362">6</text>
+              <polygon class="kundali-house-btn" data-house="7" points="200,200 100,300 200,400 300,300" onclick="updateBhavaDetails(7)" />
+              <text class="kundali-text" x="200" y="300">7</text>
+              <polygon class="kundali-house-btn" data-house="8" points="200,400 300,300 400,400" onclick="updateBhavaDetails(8)" />
+              <text class="kundali-text" x="300" y="362">8</text>
+              <polygon class="kundali-house-btn" data-house="9" points="400,200 300,300 400,400" onclick="updateBhavaDetails(9)" />
+              <text class="kundali-text" x="362" y="300">9</text>
+              <polygon class="kundali-house-btn" data-house="10" points="200,200 300,100 400,200 300,300" onclick="updateBhavaDetails(10)" />
+              <text class="kundali-text" x="300" y="200">10</text>
+              <polygon class="kundali-house-btn" data-house="11" points="400,0 300,100 400,200" onclick="updateBhavaDetails(11)" />
+              <text class="kundali-text" x="362" y="100">11</text>
+              <polygon class="kundali-house-btn" data-house="12" points="200,0 400,0 300,100" onclick="updateBhavaDetails(12)" />
+              <text class="kundali-text" x="300" y="38">12</text>
+            </svg>
+          </div>
+        </div>
+        
+        <div class="bhavas-list-panel" id="bhava-detail-panel"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==================== 5. NAKSHATRAS VIEW ==================== -->
+  <main id="page-nakshatras" class="page-view">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Lunar Constellations</span>
+        <h2 class="section-title">The 27 <em>Nakshatras</em></h2>
+        <p class="section-description">Filter the 27 lunar mansions by their ruling planet to examine their meanings, deities, and core symbols.</p>
+      </div>
+      
+      <div class="filter-bar-wrapper">
+        <div class="filter-title">Ruler Filter:</div>
+        <div class="filter-options-scroll" id="nakshatras-filter-container"></div>
+      </div>
+      
+      <div class="nak-grid" id="nakshatras-grid-container"></div>
+    </div>
+  </main>
+
+  <!-- ==================== 6. WISDOM VIEW ==================== -->
+  <main id="page-wisdom" class="page-view">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Deep Systems & Remedies</span>
+        <h2 class="section-title">Vedic Astrological <em>Wisdom</em></h2>
+        <p class="section-description">Explore details regarding Lagna, Kundali charting, planetary Dashas, Yogas, and remedial philosophy.</p>
+      </div>
+      <div class="wisdom-layouts" id="wisdom-topics-container"></div>
+    </div>
+  </main>
+
+  <!-- ==================== 7. NUMEROLOGY VIEW ==================== -->
+  <main id="page-numerology" class="page-view">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Vibrations of Numbers</span>
+        <h2 class="section-title">Vedic <em>Numerology</em></h2>
+        <p class="section-description">Compute your birth number using the day of month input below and view profile matches.</p>
+      </div>
+      
+      <!-- Calculator -->
+      <div class="numerology-calc-card">
+        <div class="calc-grid">
+          <div class="calc-instructions">
+            <h3 style="font-family: var(--font-heading); margin-bottom: 0.5rem;">How to Calculate Your Birth Number</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Your Birth Number (or Ruling/Psychic Number) is determined solely by the day of the month you were born. If the day is a double-digit number, reduce it to a single digit (1 to 9) by adding its individual digits together.</p>
+            <div class="calc-step">
+              <div class="step-num">1</div>
+              <p class="step-text">Identify your birth day of the month.</p>
+            </div>
+            <div class="calc-step">
+              <div class="step-num">2</div>
+              <p class="step-text">If the day is a two-digit number, sum the individual digits together.</p>
+            </div>
+            <div class="calc-step">
+              <div class="step-num">3</div>
+              <p class="step-text">The resulting single digit determines your ruling planet and core personality traits.</p>
+            </div>
+          </div>
+          
+          <div class="calc-interactive-box">
+            <div class="calc-input-group">
+              <label class="calc-label" for="birth-day-input">Birth Day of Month</label>
+              <input class="calc-input" type="number" id="birth-day-input" min="1" max="31" placeholder="Day (1-31)" oninput="calculateNumerology()" />
+            </div>
+            <div id="numerology-result-container" class="calc-result-box">
+              <p style="font-size: 0.85rem; color: var(--text-secondary); font-style: italic;">Enter day above to reveal birth number...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="num-grid" id="numerology-cards-container"></div>
+    </div>
+  </main>
+
+  <!-- ==================== 8. BLOG VIEW ==================== -->
+  <main id="page-blog" class="page-view">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Astrological Articles</span>
+        <h2 class="section-title">Wisdom <em>Journal</em></h2>
+        <p class="section-description">Read key alerts regarding transits and planetary alignments.</p>
+      </div>
+      <div class="blog-layout" id="blog-post-container"></div>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <div class="footer-logo">
+      Celestial <span>Divyansh</span>
+    </div>
+    <div class="footer-social-links">
+      <a href="http://instagram.com/celestialdivyansh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="currentColor" stroke-width="2" fill="none" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </a>
+      <a href="http://threads.com/@celestialdivyansh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Threads">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5v-4c0-.28.22-.5.5-.5s.5.22.5.5v4zm0-6.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5v-1c0-.28.22-.5.5-.5s.5.22.5.5v1z" />
+          <path d="M12 15.5c-2 0-3.5-1.5-3.5-3.5s1.5-3.5 3.5-3.5 3.5 1.5 3.5 3.5v1.2c0 .8-.5 1.3-1.2 1.3s-1.2-.5-1.2-1.3V12c0-1-.8-1.8-1.8-1.8S9.5 11 9.5 12s.8 1.8 1.8 1.8c.4 0 .7-.1 1-.3.2.5.7.8 1.2.8 1.4 0 2.5-1.1 2.5-2.6V12c0-2.8-2.2-5-5-5S6 9.2 6 12s2.2 5 5 5h1c.3 0 .5-.2.5-.5s-.2-.5-.5-.5h-1z" fill="none" />
+        </svg>
+      </a>
+      <a href="https://www.youtube.com/@celestialdivyansh" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+        <svg viewBox="0 0 24 24">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" stroke="currentColor" stroke-width="2" fill="none" />
+          <polygon points="9.75,15.02 15.5,12 9.75,8.98" fill="currentColor" />
+        </svg>
+      </a>
+    </div>
+    <div class="footer-copy">
+      © 2026 <span>Celestial Divyansh</span> • All Spiritual Rights Reserved • Made with Love & Cosmos
+    </div>
+  </footer>
+
+  <!-- ==================== APPS JAVASCRIPT CONTROLLERS ==================== -->
+  <script>
+    // --- DATABASE DEFINITIONS ---
+
+    const RASHIS_DATA = [
+      { id: 1, sanskrit: "मेष", english: "Aries", symbol: "♈", rulingPlanet: "Mars (Mangal)", element: "Fire", quality: "Cardinal", traits: "Initiative, courage, independence, impatience, passion", dates: "March 21 – April 19", description: "The pioneer and initiator of the zodiac. Mesha represents raw energy and the flame of new beginnings. It is direct, action-oriented, and lives with a deep sense of drive." },
+      { id: 2, sanskrit: "वृषभ", english: "Taurus", symbol: "♉", rulingPlanet: "Venus (Shukra)", element: "Earth", quality: "Fixed", traits: "Patience, reliability, sensuality, stubborness, loyalty", dates: "April 20 – May 20", description: "Steadfast and grounded. Vrishabha seeks comfort, stability, and aesthetic beauty. Deeply connected to the senses, it moves slowly but builds things of lasting material value." },
+      { id: 3, sanskrit: "मिथुन", english: "Gemini", symbol: "♊", rulingPlanet: "Mercury (Budha)", element: "Air", quality: "Mutable", traits: "Curiosity, adaptability, eloquence, restlessness, intelligence", dates: "May 21 – June 20", description: "The intellectual explorer and communicator. Mithuna thrives in the spaces of idea exchange, networking, and learning. It is versatile, adaptable, and possesses a youthful, dual nature." },
+      { id: 4, sanskrit: "कर्क", english: "Cancer", symbol: "♋", rulingPlanet: "Moon (Chandra)", element: "Water", quality: "Cardinal", traits: "Nurturing, intuition, emotional depth, defensiveness, empathy", dates: "June 21 – July 22", description: "The maternal guardian of home and heart. Karka feels life with intense emotional depth. It is highly protective of its inner circle and possesses immense intuitive power." },
+      { id: 5, sanskrit: "सिंह", english: "Leo", symbol: "♌", rulingPlanet: "Sun (Surya)", element: "Fire", quality: "Fixed", traits: "Generosity, leadership, pride, creativity, warmth", dates: "July 23 – August 22", description: "The sovereign of the zodiac. Simha radiates creative vitality, warmth, and command. It acts from the heart, seeking to illuminate others while expressing its unique, authentic self." },
+      { id: 6, sanskrit: "कन्या", english: "Virgo", symbol: "♍", rulingPlanet: "Mercury (Budha)", element: "Earth", quality: "Mutable", traits: "Discernment, service, meticulousness, perfectionism, analytical mind", dates: "August 23 – September 22", description: "The dedicated craftsperson and healer. Kanya analyzes the details of the world to organize and heal. It is driven by service, purification, and the pursuit of practical excellence." },
+      { id: 7, sanskrit: "तुला", english: "Libra", symbol: "♎", rulingPlanet: "Venus (Shukra)", element: "Air", quality: "Cardinal", traits: "Harmony, diplomacy, aesthetic sense, indecisiveness, cooperation", dates: "September 23 – October 22", description: "The seeker of balance and connection. Tula moves through life with an eye for harmony in relationships, art, and justice. It thrives in partnership and balances opposing forces." },
+      { id: 8, sanskrit: "वृश्चिक", english: "Scorpio", symbol: "♏", rulingPlanet: "Mars (Mangal)", element: "Water", quality: "Fixed", traits: "Intensity, passion, secrets, regeneration, loyalty, willpower", dates: "October 23 – November 21", description: "The sign of deep transformation and rebirth. Vrishchika plunges into the psychological depths. It possesses intense focus, strategic capacity, and the power to rise from the ashes." },
+      { id: 9, sanskrit: "धनु", english: "Sagittarius", symbol: "♐", rulingPlanet: "Jupiter (Guru)", element: "Fire", quality: "Mutable", traits: "Optimism, truth-seeking, generosity, directness, freedom-loving", dates: "November 22 – December 21", description: "The eternal pilgrim and scholar. Dhanu aims its vision at the distant horizon, seeking higher philosophy, truth, and moral laws. It cannot be bound by small or narrow spaces." },
+      { id: 10, sanskrit: "मकर", english: "Capricorn", symbol: "♑", rulingPlanet: "Saturn (Shani)", element: "Earth", quality: "Cardinal", traits: "Discipline, ambition, structure, patience, realism", dates: "December 22 – January 19", description: "The climbing mountain goat of the chart. Makara builds with order, rules, and elegance. It respects time and authority, ascending steadily toward material and societal summits." },
+      { id: 11, sanskrit: "कुम्भ", english: "Aquarius", symbol: "♒", rulingPlanet: "Saturn (Shani)", element: "Air", quality: "Fixed", traits: "Originality, humanitarianism, detachment, intellect, collectivism", dates: "January 20 – February 18", description: "The visionary reformer pouring wisdom for all. Kumbha looks at life from an intellectual distance to serve humanity. It represents group structures, innovation, and futuristic ideas." },
+      { id: 12, sanskrit: "मीन", english: "Pisces", symbol: "♓", rulingPlanet: "Jupiter (Guru)", element: "Water", quality: "Mutable", traits: "Compassion, imagination, spirituality, escapism, formlessness", dates: "February 19 – March 20", description: "The final sign that dissolves all boundaries. Meena represents dreams, spiritual liberation (Moksha), and universal love. It flows past structure, returning all individuality back to the cosmic ocean." }
+    ];
+
+    const GRAHAS_DATA = [
+      {
+        id: 1, sanskrit: "सूर्य", english: "Surya (Sun)", symbol: "☉", day: "Sunday", gemstone: "Ruby", colour: "Deep Red / Gold", metal: "Copper / Gold", root: "Bel Root (Jadi)",
+        domain: "Soul (Atman), Ego, Vitality, Father, Authority, Government, Leadership",
+        about: "The king of the planetary council. Surya represents our soul, our core identity, and our life-giving energy. It dictates our self-confidence, relationship with our father, and public status.",
+        remedies: [
+          "Wake up before sunrise and offer water (Arghya) to the Sun while chanting the Gayatri Mantra.",
+          "Donate copper vessels, red flowers, or wheat on Sundays to the needy.",
+          "Recite Aditya Hridaya Stotra daily to boost energy and clear obstacles."
+        ]
+      },
+      {
+        id: 2, sanskrit: "चन्द्र", english: "Chandra (Moon)", symbol: "☽", day: "Monday", gemstone: "Pearl", colour: "White / Silver", metal: "Silver", root: "Khirni Root",
+        domain: "Mind (Manas), Emotions, Mother, Mental peace, Nourishment, Water element",
+        about: "The queen of the heavens. Chandra governs the mind, feelings, instincts, and our capacity to receive and give nourishment. It represents the mother, memory, and emotional security.",
+        remedies: [
+          "Practice meditation daily and drink water from a silver cup to calm the mind.",
+          "Respect and serve your mother, and seek her blessings regularly.",
+          "Donate milk, rice, or silver ornaments on Mondays, or keep a fast on Mondays."
+        ]
+      },
+      {
+        id: 3, sanskrit: "मंगल", english: "Mangal (Mars)", symbol: "♂", day: "Tuesday", gemstone: "Red Coral", colour: "Bright Red", metal: "Copper / Brass", root: "Anantmool Root",
+        domain: "Energy, Courage, Strength, Siblings, Land, Action, Logic, Wars",
+        about: "The commander-in-chief. Mangal represents physical energy, willpower, courage, and action. It rules our muscles, blood, and siblings. A strong Mars grants protective drive, while an afflicted Mars causes anger and accidents.",
+        remedies: [
+          "Chant the Hanuman Chalisa every Tuesday to channel Martian energy constructively.",
+          "Donate red lentils (Masoor Dal), copper, or sweet foods on Tuesdays.",
+          "Maintain a good relationship with siblings and avoid impulsive verbal disputes."
+        ]
+      },
+      {
+        id: 4, sanskrit: "बुध", english: "Budha (Mercury)", symbol: "☿", day: "Wednesday", gemstone: "Emerald", colour: "Green", metal: "Bronze", root: "Vidhara Root",
+        domain: "Intellect, Communication, Speech, Trade, Analysis, Writing, Mathematics",
+        about: "The messenger and the merchant. Budha rules communication, transaction, analytical writing, humor, and speech. It is highly adaptable, adopting the nature of planets it resides with.",
+        remedies: [
+          "Feed green grass or spinach to cows on Wednesday mornings.",
+          "Keep green plants in your living area and support children's education.",
+          "Recite Vishnu Sahasranama to clear communication blocks and improve intelligence."
+        ]
+      },
+      {
+        id: 5, sanskrit: "गुरु", english: "Guru (Jupiter)", symbol: "♃", day: "Thursday", gemstone: "Yellow Sapphire", colour: "Yellow / Gold", metal: "Gold", root: "Banana / Turmeric Root",
+        domain: "Wisdom, Dharma, Luck, Wealth, Guru, Children, Expansion, Philosophy",
+        about: "The divine teacher of the gods (Brihaspati). Guru expands whichever house it occupies or aspects. It represents wisdom, wealth, spiritual path, children, and our moral principles.",
+        remedies: [
+          "Offer yellow flowers, chana dal, or turmeric to a banana tree on Thursdays.",
+          "Donate books, yellow clothes, or sweets to priests, teachers, or elders.",
+          "Fast on Thursdays and read scriptures or listen to guru talks."
+        ]
+      },
+      {
+        id: 6, sanskrit: "शुक्र", english: "Shukra (Venus)", symbol: "♀", day: "Friday", gemstone: "Diamond", colour: "Translucent White / Pastel", metal: "Silver / Platinum", root: "Arand Root",
+        domain: "Love, Marriage, Creative Art, Luxury, Desires, Vehicles, Harmony, Healing",
+        about: "The teacher of the Daityas (Asuras). Shukra rules aesthetics, romance, spouse, refinement, transport, and artistic skills. It represents our capacity to experience joy, harmony, and luxury.",
+        remedies: [
+          "Respect your spouse or partner and treat women with utmost honor.",
+          "Donate white food products like sugar, curd, or white clothes on Fridays.",
+          "Keep your living spaces fragrant, clean, and decorated with fresh flowers."
+        ]
+      },
+      {
+        id: 7, sanskrit: "शनि", english: "Shani (Saturn)", symbol: "♄", day: "Saturday", gemstone: "Blue Sapphire", colour: "Black / Dark Blue", metal: "Iron", root: "Shami Root",
+        domain: "Karma, Time, Discipline, Delays, Obstacles, Renunciation, Longevity, Service",
+        about: "The strict judge of karma. Shani moves slowly, requiring discipline, patience, and humility. It forces us to work through debt and limitation, teaching through renunciation.",
+        remedies: [
+          "Light a mustard oil lamp under a Peepal tree on Saturday evenings.",
+          "Help, serve, and donate footwear, iron goods, or black sesame seeds to laborers or the disabled.",
+          "Chant Shani Mantra ('Om Sham Shanaishcharaya Namah') 108 times on Saturday mornings."
+        ]
+      },
+      {
+        id: 8, sanskrit: "राहु", english: "Rahu (North Node)", symbol: "☊", day: "Saturday (Associated)", gemstone: "Hessonite Gomed", colour: "Smoky Gray", metal: "Lead", root: "Chandan Root",
+        domain: "Obsession, Ambition, Technology, Illusions, Foreigners, Outcasts, Unorthodox ways",
+        about: "The head of the dragon. Rahu represents shadow cravings, obsessions, sudden developments, and modern technology. It pushes us beyond our traditional comfort zone.",
+        remedies: [
+          "Donate items of smoky gray color, blankets, or coconuts to homeless shelters.",
+          "Feed stray dogs, especially black dogs, on Saturdays.",
+          "Chant the Rahu Beej Mantra ('Om Raam Rahave Namah') at dusk."
+        ]
+      },
+      {
+        id: 9, sanskrit: "केतु", english: "Ketu (South Node)", symbol: "☋", day: "Tuesday (Associated)", gemstone: "Cat's Eye Lehsuniya", colour: "Spotted / Multi-color", metal: "Lead / Mixed", root: "Asvagandha Root",
+        domain: "Moksha (Liberation), Detachment, Occult, Spirituality, Past karma, Loss, Surgery",
+        about: "The tail of the dragon. Ketu represents spiritual liberation, renunciation, psychic intuition, and computational coding. It dissolves physical attachments to make way for soul release.",
+        remedies: [
+          "Feed multi-colored birds or street cats daily.",
+          "Donate warm blankets, gray cloth, or metal cutlery to monks or shelters.",
+          "Chant the Ketu Beej Mantra ('Om Kem Ketave Namah') to enhance spiritual intuition."
+        ]
+      }
+    ];
+
+    const BHAVAS_DATA = [
+      {
+        number: 1, sanskrit: "लग्न / प्रथम भाव", english: "First House (Lagna)", alt: "House of Self (Tanu Bhava)", significator: "Sun (Surya)", category: "Dharma",
+        keyAreas: "Physical body, head, general appearance, self-identity, health, lifespan, path in life",
+        about: "The rising sign at birth. It forms the structure of the entire chart. It governs physical appearance, ego projection, self-confidence, and general constitution.",
+        description: "The first house acts as the lens through which you engage the world. It sets the baseline of physical vitality, personal outlook, and your life journey. A strong first house or first lord ensures quick recovery from illnesses and helps you seize life opportunities."
+      },
+      {
+        number: 2, sanskrit: "धन / द्वितीय भाव", english: "Second House", alt: "House of Wealth (Dhana Bhava)", significator: "Jupiter (Guru)", category: "Artha",
+        keyAreas: "Accumulated wealth, speech, family, face, food habits, personal values, self-worth",
+        about: "Governs personal finances, assets, speech, family background, and the food you consume.",
+        description: "The second house is not just money, but everything you hold onto: values, family traditions, and your voice. It shows your early childhood environment and how you manifest assets through resource management."
+      },
+      {
+        number: 3, sanskrit: "सहज / तृतीय भाव", english: "Third House", alt: "House of Siblings (Bhratri Bhava)", significator: "Mars (Mangal)", category: "Kama",
+        keyAreas: "Younger siblings, short travels, writing, hands and shoulders, courage, willpower, communication",
+        about: "Rules physical strength, initiative, hobbies, media skills, and immediate neighbors.",
+        description: "Known as a house of self-effort (Upachaya). The third house details the struggles and courage you exert to shape your destiny. It governs local transport, short journeys, and analytical skills using the hands."
+      },
+      {
+        number: 4, sanskrit: "सुख / चतुर्थ भाव", english: "Fourth House", alt: "House of Happiness (Matri Bhava)", significator: "Moon (Chandra)", category: "Moksha",
+        keyAreas: "Mother, home, land, vehicles, inner happiness, emotional foundations, chest",
+        about: "Rules our private life, properties, vehicular comforts, and connection to our homeland.",
+        description: "The fourth house forms the emotional base of the chart. It indicates your relationship with your mother, the atmosphere of your household, and whether you feel content within yourself."
+      },
+      {
+        number: 5, sanskrit: "पुत्र / पञ्चम भाव", english: "Fifth House", alt: "House of Intellect (Putra Bhava)", significator: "Jupiter (Guru)", category: "Dharma",
+        keyAreas: "Children, creativity, romance, high intellect, past life merit (Poorva Punya), speculation",
+        about: "Governs intelligence, education, speculative investments, mantra recitation, and fun.",
+        description: "A highly auspicious trine house. The fifth house holds the rewards of past life actions. It showcases your capability to create—be it children, art, ideas, or romantic bonds."
+      },
+      {
+        number: 6, sanskrit: "रिपु / षष्ठ भाव", english: "Sixth House", alt: "House of Service (Ari Bhava)", significator: "Mars (Mangal) & Saturn (Shani)", category: "Artha",
+        keyAreas: "Diseases, debts, daily service, pets, enemies, lawsuits, obstacle management, lower abdomen",
+        about: "Rules conflict resolution, clinical service, everyday duties, and physical debts.",
+        description: "An Upachaya house representing life challenges. It shows your capacity to fight back against diseases and enemies, handle debt, and perform meticulous routine service."
+      },
+      {
+        number: 7, sanskrit: "जाया / सप्तम भाव", english: "Seventh House", alt: "House of Partnerships (Yuvati Bhava)", significator: "Venus (Shukra)", category: "Kama",
+        keyAreas: "Marriage, business partners, public interactions, spouse qualities, kidney, foreign travels",
+        about: "Governs spouse, marriage contract, close friendships, business relations, and legal negotiations.",
+        description: "The mirror opposite of the first house. The seventh house governs the 'Other' — how you build legal contracts, balance marriage, interact with the masses, and relate to open competitors."
+      },
+      {
+        number: 8, sanskrit: "मृत्यु / अष्टम भाव", english: "Eighth House", alt: "House of Transformation (Randhra Bhava)", significator: "Saturn (Shani)", category: "Moksha",
+        keyAreas: "Longevity, secrets, unearned wealth, occult science, inheritance, sudden disasters, genitals",
+        about: "Rules long life, mystical exploration, joint finances, taxes, and psychological death-rebirth cycles.",
+        description: "The most mystical house in Jyotish. It governs sudden changes, secrets, and research. Planets placed here are hidden from view, forcing you to undergo major life transformations to unlock their power."
+      },
+      {
+        number: 9, sanskrit: "धर्म / नवम भाव", english: "Ninth House", alt: "House of Fate (Bhagya Bhava)", significator: "Jupiter (Guru)", category: "Dharma",
+        keyAreas: "Father, Guru, higher studies, long-distance journeys, religious philosophy, luck, thighs",
+        about: "Governs spiritual path, pilgrimage, teachers, principles, and systemic fortune.",
+        description: "The house of ultimate fortune (Bhagya). The ninth house indicates your spiritual alignment, relationship with your father as your first teacher, and the luck that cushions you through life's falls."
+      },
+      {
+        number: 10, sanskrit: "कर्म / दशम भाव", english: "Tenth House", alt: "House of Career (Karma Bhava)", significator: "Sun (Surya), Mercury, Jupiter", category: "Artha",
+        keyAreas: "Profession, public reputation, career rank, social status, knees, authority figures",
+        about: "Rules actions in the outside world, profession, leadership position, and career success.",
+        description: "The highest point of the chart. The tenth house represents public service and what you are known for in society. It shows your leadership capabilities, authority, and professional achievements."
+      },
+      {
+        number: 11, sanskrit: "लाभ / एकादश भाव", english: "Eleventh House", alt: "House of Gains (Labha Bhava)", significator: "Jupiter (Guru)", category: "Kama",
+        keyAreas: "Income, fulfillment of desires, elder siblings, network circles, awards, social status, ankles",
+        about: "Rules cash inflow, profit, large organizations, peer networks, and ambitions.",
+        description: "A highly beneficial Upachaya house where planets grow to deliver profits. It represents your dreams coming to fruition, money earned from your profession, and the networks that support you."
+      },
+      {
+        number: 12, sanskrit: "व्यय / द्वादश भाव", english: "Twelfth House", alt: "House of Liberation (Vyaya Bhava)", significator: "Saturn (Shani)", category: "Moksha",
+        keyAreas: "Spiritual liberation, expenditures, foreign lands, isolation, sleep, dreams, hospitals, feet",
+        about: "Rules charity, letting go, spiritual retreats, bedroom comfort, travel to far countries.",
+        description: "The final step of the zodiac cycle. The twelfth house is the house of loss (Vyaya), which represents both spending currency and letting go of the ego. It is the gate to subconscious dreams and Moksha."
+      }
+    ];
+
+    const NAKSHATRAS_DATA = [
+      { number: 1, sanskrit: "अश्विनी", transliteration: "Ashwini", meaning: "Born of the horse woman", deity: "Ashwin Kumaras (Golden Twins of Healing)", planet: "Ketu", rashi: "Aries", symbol: "Horse's head", about: "A constellation of speed, healing, and direct action. Ashwini is youthful and swift, ruling physician crafts, physical medicine, and pioneering activities." },
+      { number: 2, sanskrit: "भरणी", transliteration: "Bharani", meaning: "The bearer", deity: "Yama (God of Death and Justice)", planet: "Venus", rashi: "Aries", symbol: "Yoni (womb)", about: "Rules creation and destruction. Bharani represents struggle, patience, and processing karmic blockages. It displays high creative fertility under intense compression." },
+      { number: 3, sanskrit: "कृत्तिका", transliteration: "Krittika", meaning: "The cutter / Pleiades", deity: "Agni (God of Sacred Fire)", planet: "Sun", rashi: "Aries / Taurus", symbol: "A knife or flame", about: "Represents purification, critical analysis, and nurturing. Krittika cuts away imperfections and errors to nourish what is pure." },
+      { number: 4, sanskrit: "रोहिणी", transliteration: "Rohini", meaning: "The red one", deity: "Brahma (The Creator)", planet: "Moon", rashi: "Taurus", symbol: "Chariot / Cart", about: "Governs agricultural growth, beauty, fashion, and sensuality. Rohini is highly charming, magnetic, and rules over the manifestation of material luxuries." },
+      { number: 5, sanskrit: "मृगशिरा", transliteration: "Mrigashira", meaning: "The deer's head", deity: "Soma (God of nectar, Moon)", planet: "Mars", rashi: "Taurus / Gemini", symbol: "Deer's head", about: "Governs intellectual search, travel, curiosity, and gentleness. Like a deer wandering the forest, Mrigashira searches for truth." },
+      { number: 6, sanskrit: "आर्द्रा", transliteration: "Ardra", meaning: "The moist one", deity: "Rudra (The Storm Lord)", planet: "Rahu", rashi: "Gemini", symbol: "Teardrop / Diamond", about: "Represents storms, emotional releases, and clearing out old foundations. Ardra brings chaos and tears that eventually wash away illusions, leaving clarity." },
+      { number: 7, sanskrit: "पुनर्वसु", transliteration: "Punarvasu", meaning: "Return of the light", deity: "Aditi (Cosmic Mother of Gods)", planet: "Jupiter", rashi: "Gemini / Cancer", symbol: "Quiver of arrows", about: "Represents renewal, returning to home, security, and restoration. It is highly protective and philosophical." },
+      { number: 8, sanskrit: "पुष्य", transliteration: "Pushya", meaning: "Nourisher", deity: "Brihaspati (Teacher of Gods)", planet: "Saturn", rashi: "Cancer", symbol: "Flower / Circle", about: "Considered the most auspicious Nakshatra for spiritual activities. Pushya provides nourishment, protection, spiritual wisdom, and guidance." },
+      { number: 9, sanskrit: "आश्लेषा", transliteration: "Ashlesha", meaning: "The clinging star", deity: "Nagas (Divine Serpents)", planet: "Mercury", rashi: "Cancer", symbol: "Coiled serpent", about: "Rules intuition, hypnotic magnetism, defense mechanisms, and occult knowledge. It carries strong energy of Kundalini." },
+      { number: 10, sanskrit: "मघा", transliteration: "Magha", meaning: "The great one", deity: "Pitrs (Ancestral Spirits)", planet: "Ketu", rashi: "Leo", symbol: "Royal throne", about: "Governs lineage, inheritance, royalty, and historical memory. Magha respects traditions and uses ancestral power to rule." },
+      { number: 11, sanskrit: "पूर्व फाल्गुनी", transliteration: "Purva Phalguni", meaning: "The former reddish one", deity: "Bhaga (God of marital bliss)", planet: "Venus", rashi: "Leo", symbol: "Hammock / Front legs of bed", about: "Rules leisure, creativity, theatrical arts, romance, and sensory satisfaction." },
+      { number: 12, sanskrit: "उत्तर फाल्गुनी", transliteration: "Uttara Phalguni", meaning: "The latter reddish one", deity: "Aryaman (God of patronage)", planet: "Sun", rashi: "Leo / Virgo", symbol: "Back legs of bed", about: "Rules societal contracts, long marriages, philanthropy, and reliability. It builds communities through loyal friendship." },
+      { number: 13, sanskrit: "हस्त", transliteration: "Hasta", meaning: "The hand", deity: "Savitar (The Sun God)", planet: "Moon", rashi: "Virgo", symbol: "Open hand", about: "Rules handicraft, clinical therapy, healing touch, comedy, and magic tricks. It signifies dexterity and physical skill." },
+      { number: 14, sanskrit: "चित्रा", transliteration: "Chitra", meaning: "The bright one", deity: "Vishwakarma (Divine Architect)", planet: "Mars", rashi: "Virgo / Libra", symbol: "Bright jewel / Pearl", about: "Rules architecture, visual design, jewelry, and artistic drafting. Chitra values external beauty and precision." },
+      { number: 15, sanskrit: "स्वाती", transliteration: "Swati", meaning: "Self-going", deity: "Vayu (Wind God)", planet: "Rahu", rashi: "Libra", symbol: "Young sprout in wind", about: "Rules flexibility, business trade, communication, and music. Swati is independent and adapts quickly like a breeze." },
+      { number: 16, sanskrit: "विशाखा", transliteration: "Vishakha", meaning: "The forked one", deity: "Indra & Agni (Dual deities)", planet: "Jupiter", rashi: "Libra / Scorpio", symbol: "Triumphal Archway", about: "Signifies singular goal-focus, ambition, competitive triumph, and celebration." },
+      { number: 17, sanskrit: "अनुराधा", transliteration: "Anuradha", meaning: "Following Radha", deity: "Mitra (God of friendships)", planet: "Saturn", rashi: "Scorpio", symbol: "Lotus flower", about: "Governs devotion, collective organization, loyalty, and music. Anuradha blossoms in difficult conditions." },
+      { number: 18, sanskrit: "ज्येष्ठा", transliteration: "Jyeshtha", meaning: "The eldest", deity: "Indra (King of Gods)", planet: "Mercury", rashi: "Scorpio", symbol: "Circular amulet", about: "Rules seniority, defensive shielding, occult research, and responsibility. It represents protection." },
+      { number: 19, sanskrit: "मूल", transliteration: "Mula", meaning: "The root", deity: "Nirriti (Goddess of dissolution)", planet: "Ketu", rashi: "Sagittarius", symbol: "Bundle of roots", about: "Rules research, deep investigation, uprooting old structures, and spiritual realization." },
+      { number: 20, sanskrit: "पूर्वाषाढ़ा", transliteration: "Purva Ashadha", meaning: "The former invincible one", deity: "Apas (Water Goddess)", planet: "Venus", rashi: "Sagittarius", symbol: "Fan", about: "Rules purification, self-confidence, artistic expression, and early success." },
+      { number: 21, sanskrit: "उत्तराषाढ़ा", transliteration: "Uttara Ashadha", meaning: "The latter invincible one", deity: "Vishvadevas (All-Gods)", planet: "Sun", rashi: "Sagittarius / Capricorn", symbol: "Elephant's tusk", about: "Rules universal ideals, structured duty, final success, and deep sincerity." },
+      { number: 22, sanskrit: "श्रवण", transliteration: "Shravana", meaning: "Hearing", deity: "Vishnu (The Preserver)", planet: "Moon", rashi: "Capricorn", symbol: "Three footprints", about: "Rules oral knowledge, learning, chanting, and auditory processing. Shravana learns by quiet listening." },
+      { number: 23, sanskrit: "धनिष्ठा", transliteration: "Dhanishtha", meaning: "The wealthiest", deity: "Ashta Vasus (Elemental Gods)", planet: "Mars", rashi: "Capricorn / Aquarius", symbol: "Drum", about: "Rules musical rhythm, empty space, material wealth, fame, and organizational capacity." },
+      { number: 24, sanskrit: "शतभिषा", transliteration: "Shatabhisha", meaning: "A hundred physicians", deity: "Varuna (God of cosmic waters)", planet: "Rahu", rashi: "Aquarius", symbol: "Empty circle", about: "Rules medical treatments, electronics, isolation, secrecy, and high science. It is highly analytical." },
+      { number: 25, sanskrit: "पूर्व भाद्रपद", transliteration: "Purva Bhadrapada", meaning: "The former blessed feet", deity: "Aja Ekapad (One-footed fire serpent)", planet: "Jupiter", rashi: "Aquarius / Pisces", symbol: "Sword", about: "Rules intense transformation, sacrificial passion, and esoteric wisdom. It possesses radical energy." },
+      { number: 26, sanskrit: "उत्तर bhadrapada", transliteration: "Uttara Bhadrapada", meaning: "The latter blessed feet", deity: "Ahir Budhnya (Dragon of the deep)", planet: "Saturn", rashi: "Pisces", symbol: "Twin faces", about: "Rules steady depth, spiritual stability, control over impulses, and charity. It represents deep wisdom." },
+      { number: 27, sanskrit: "रेवती", transliteration: "Revati", meaning: "The wealthy", deity: "Pushan (Protector of paths)", planet: "Mercury", rashi: "Pisces", symbol: "Fish", about: "The final Nakshatra. Rules safe travel, transition, animal care, wealth, and liberation." }
+    ];
+
+    const WISDOM_DATA = [
+      {
+        id: "ascendant", sanskrit: "लग्न (Lagna)", title: "The Ascendant",
+        summary: "The rising zodiac sign at the moment of birth, representing the physical body and life path.",
+        items: [
+          { h: "The Rising Sign", b: "The Ascendant is the sign rising on the Eastern horizon at the exact time and location of birth. Because it changes every two hours, accurate birth time is crucial." },
+          { h: "Chart Ruler", b: "The Lagna is the starting point of the birth chart (First House). The ruling planet of the Lagna (Lagna Lord) acts as your chart ruler, indicating physical vitality and resilience." },
+          { h: "Personality Filter", b: "The Lagna colors physical temperament and outward projection. E.g., Aries rises with direct drive, whereas Libra rising carries diplomacy and aesthetic values." }
+        ]
+      },
+      {
+        id: "birthchart", sanskrit: "जन्म कुण्डली (Janma Kundali)", title: "The Birth Chart Map",
+        summary: "The cosmic snapshot mapping planets in houses at your exact birth time.",
+        items: [
+          { h: "Rashi Chart (D-1)", b: "The main layout showing the arrangement of planets in the 12 houses. North Indian layout has static houses; South Indian layout has static signs." },
+          { h: "Divisional Charts (Vargas)", b: "Detailed harmonic slices. The Navamsha (D-9) represents your inner spiritual orientation, potential, marriage directions, and second half of life." },
+          { h: "Dignities", b: "Planets function differently depending on whether they are exalted (peak performance), debilitated (friction), or in friendly signs." }
+        ]
+      },
+      {
+        id: "dashasystem", sanskrit: "विंशोत्तरी दशा (Vimshottari Dasha)", title: "The Dasha Cycles",
+        summary: "The master timeline mapping when specific planetary karmas will manifest in a human lifespan.",
+        items: [
+          { h: "Planetary Periods", b: "A 120-year cycle divided into specific periods for the 9 planets. The sequence of ruling planets is always: Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, and Mercury." },
+          { h: "Mahadasha & Antardasha", b: "The primary activated planet (Mahadasha) sets the general themes, while the sub-period planet (Antardasha) dictates specific events and timing." },
+          { h: "Temporal Activation", b: "Explains why events manifest when they do. Marriage or career events align when their ruling house lords are triggered in the Dasha cycle." }
+        ]
+      },
+      {
+        id: "yogs", sanskrit: "योग (Planetary Yogas)", title: "Special Yoga Combinations",
+        summary: "Planetary unions in the chart that create specific fortunes or spiritual blessings.",
+        items: [
+          { h: "Yogas Defined", b: "Specific mathematical configurations of planets, signs, and aspects that produce unique outcomes. In Vedic texts, thousands of Yogas describe wealth or renunciation." },
+          { h: "Raja Yogas", b: "Formed when angle lords (Kendra) and trine lords (Trikona) establish a connection. This configuration is associated with power and leadership." },
+          { h: "Pancha Mahapurusha Yogas", b: "Formed when Mars, Mercury, Jupiter, Venus, or Saturn are strong in angle houses, granting specific human virtues." }
+        ]
+      },
+      {
+        id: "doshas", sanskrit: "दोष एवं उपाय (Dosha & Upaya)", title: "Doshas & Vedic Remedies",
+        summary: "Identifying chart obstructions and utilizing spiritual tools for purification.",
+        items: [
+          { h: "Astrological Doshas", b: "Planetary obstructions. E.g., Manglik Dosha causes relationship friction, while Kaal Sarp Dosha brings early life obstacles due to planets hemmed by Rahu and Ketu." },
+          { h: "Vedic Remedies (Upayas)", b: "Practices designed to calm planetary friction. Remedies function like an umbrella: they don't stop the rain, but they prevent you from getting soaked." },
+          { h: "Remedial Modalities", b: "Includes mantra chanting, keeping fasts, wearing gemstone rings (under advice), wearing root barks (Jadi), and donating grains." }
+        ]
+      }
+    ];
+
+    const NUMEROLOGY_DATA = [
+      { number: 1, planet: "Sun (Surya)", traits: "Leadership, independence, originality, ambition, pioneering spirit", colors: "Gold, Yellow, Orange", gemstones: "Ruby", metal: "Copper / Gold", day: "Sunday" },
+      { number: 2, planet: "Moon (Chandra)", traits: "Cooperation, intuition, sensitivity, diplomacy, artistic mind", colors: "White, Silver, Cream", gemstones: "Pearl", metal: "Silver", day: "Monday" },
+      { number: 3, planet: "Jupiter (Guru)", traits: "Wisdom, expansion, optimism, discipline, teaching, luck", colors: "Yellow, Mauve, Gold", gemstones: "Yellow Sapphire", metal: "Gold", day: "Thursday" },
+      { number: 4, planet: "Rahu (North Node)", traits: "Unorthodox, rebellion, innovation, sudden shifts, technology", colors: "Smoky Gray, Electric Blue", gemstones: "Hessonite Gomed", metal: "Lead", day: "Saturday" },
+      { number: 5, planet: "Mercury (Budha)", traits: "Intelligence, quick communication, trade skills, analytical mind", colors: "Light Green, Turquoise", gemstones: "Emerald", metal: "Bronze", day: "Wednesday" },
+      { number: 6, planet: "Venus (Shukra)", traits: "Love, harmony, luxury, artistic refinement, magnetic attraction", colors: "Pastel Pink, White, Light Blue", gemstones: "Diamond", metal: "Silver / Platinum", day: "Friday" },
+      { number: 7, planet: "Ketu (South Node)", traits: "Mysticism, detachment, intuition, research, introspection", colors: "Light Yellow, Gray", gemstones: "Cat's Eye", metal: "Lead / Bronze", day: "Tuesday" },
+      { number: 8, planet: "Saturn (Shani)", traits: "Discipline, organization, hard work, delay, endurance", colors: "Dark Blue, Black, Dark Gray", gemstones: "Blue Sapphire", metal: "Iron", day: "Saturday" },
+      { number: 9, planet: "Mars (Mangal)", traits: "Courage, energy, humanitarianism, combativeness, strong will", colors: "Crimson Red, Rose Pink", gemstones: "Red Coral", metal: "Copper", day: "Tuesday" }
+    ];
+
+    const BLOG_DATA = {
+      title: "Jupiter Transcends into Pisces on 2nd June: Easing Human Suffering Through Character & Wisdom",
+      date: "June 02, 2026",
+      category: "Celestial Transit",
+      author: "Acharya Divyansh",
+      content: `
+        <p class="drop-cap">The cosmic tides are shifting. On June 2nd, 2026, Guru (Jupiter), the planet of spiritual wisdom and expansion, enters its deep, boundary-dissolving water domicile of Meena (Pisces). When a planet returns to its own home, its capacity to express its highest qualities reaches its peak. Pisces is Jupiter's water home—a space of compassion, dreams, healing, and spiritual liberation (Moksha).</p>
+        
+        <p>For the past year, human consciousness has grappled with polarization, mental speed, and structural conflicts. Jupiter in Pisces acts like a cool monsoon rain falling on dry, parched soils. It brings a profound easing of human suffering, softening hardened viewpoints and expanding our collective capacity for empathy.</p>
+        
+        <div class="blog-quote-box">
+          "True wisdom is not the accumulation of facts; it is the capacity to feel another's pain and see the divine thread linking all creation."
+        </div>
+        
+        <h3>The Golden Condition: Good Character and Moral Integrity</h3>
+        <p>However, the blessings of Jupiter are never delivered as a passive miracle. Jupiter represents Dharma (righteousness). Its positive impact during this transit will be amplified or limited based on individual action and moral alignment. For those who maintain clean moral character, practice honesty, and align their actions with ethical integrity, this transit will act as a major booster, opening doors to spiritual clarity and financial progress.</p>
+        
+        <p>If you wish to make the most of this transition, consider focusing on these core qualities:</p>
+        <ul>
+          <li><strong>Satya (Truth):</strong> Practice truthfulness in speech and business transactions.</li>
+          <li><strong>Dana (Charity):</strong> Donate books, yellow grains, or support children's welfare organizations.</li>
+          <li><strong>Dhyana (Meditation):</strong> Dedicate quiet time for prayer or introspection to align with Jupiter's expansion.</li>
+        </ul>
+        
+        <p>As Jupiter floats through the waters of Pisces, may your heart expand, your mind quieten, and your soul align with the gentle, guiding light of the cosmos.</p>
+      `
+    };
+
+
+    // --- APP CONTROLLERS ---
+
+    function toggleTheme() {
+      const body = document.body;
+      const isDark = body.classList.toggle('dark-theme');
+      localStorage.setItem('celestial-theme', isDark ? 'dark' : 'light');
+    }
+
+    function initTheme() {
+      const savedTheme = localStorage.getItem('celestial-theme');
+      const body = document.body;
+      if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+      } else {
+        body.classList.remove('dark-theme');
+      }
+    }
+
+    function showPage(pageId) {
+      const views = document.querySelectorAll('.page-view');
+      views.forEach(view => view.classList.remove('active'));
+      
+      const targetView = document.getElementById(`page-${pageId}`);
+      if (targetView) targetView.classList.add('active');
+      
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('onclick').includes(`showPage('${pageId}')`)) {
+          link.classList.add('active');
+        }
+      });
+
+      // Close mobile menu
+      const navElement = document.getElementById('navbar-links');
+      if (navElement.classList.contains('mobile-open')) {
+        navElement.classList.remove('mobile-open');
+      }
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      const navElement = document.getElementById('navbar-links');
+      navElement.classList.toggle('mobile-open');
+    }
+
+    // --- RENDERING ROUTINES ---
+
+    function renderRashis() {
+      const container = document.getElementById('rashis-list-container');
+      if (!container) return;
+      
+      container.innerHTML = RASHIS_DATA.map(rashi => {
+        const elemClass = `element-${rashi.element.toLowerCase()}`;
+        return `
+          <div class="glass-card">
+            <div class="rashi-card-header">
+              <div>
+                <h3 class="rashi-sanskrit">${rashi.sanskrit}</h3>
+                <div class="rashi-english">${rashi.english}</div>
+              </div>
+              <div class="rashi-symbol">${rashi.symbol}</div>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 1.5rem;">${rashi.description}</p>
+            <div class="rashi-badge-container">
+              <span class="element-badge ${elemClass}">${rashi.element}</span>
+              <span class="element-badge" style="border-color: var(--card-border); color: var(--text-secondary);">${rashi.quality}</span>
+            </div>
+            <div class="rashi-details-list">
+              <div class="rashi-detail-row">
+                <span class="rashi-detail-label">Ruling Planet:</span>
+                <span class="rashi-detail-val">${rashi.rulingPlanet}</span>
+              </div>
+              <div class="rashi-detail-row">
+                <span class="rashi-detail-label">Dates:</span>
+                <span class="rashi-detail-val">${rashi.dates}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderGrahas() {
+      const container = document.getElementById('grahas-list-container');
+      if (!container) return;
+      
+      container.innerHTML = GRAHAS_DATA.map(graha => `
+        <div class="graha-card-horizontal">
+          <div class="graha-left-panel">
+            <div class="graha-circle-symbol">${graha.symbol}</div>
+            <h3 class="graha-sanskrit-name">${graha.sanskrit}</h3>
+            <div class="graha-english-name">${graha.english}</div>
+          </div>
+          <div class="graha-right-panel">
+            <div>
+              <p class="graha-bio-text">${graha.about}</p>
+              <div class="graha-meta-grid">
+                <div class="graha-meta-item"><div class="graha-meta-label">Gemstone</div><div class="graha-meta-value">${graha.gemstone}</div></div>
+                <div class="graha-meta-item"><div class="graha-meta-label">Day</div><div class="graha-meta-value">${graha.day}</div></div>
+                <div class="graha-meta-item"><div class="graha-meta-label">Color</div><div class="graha-meta-value">${graha.colour}</div></div>
+                <div class="graha-meta-item"><div class="graha-meta-label">Metal</div><div class="graha-meta-value">${graha.metal}</div></div>
+                <div class="graha-meta-item"><div class="graha-meta-label">Root (Jadi)</div><div class="graha-meta-value">${graha.root}</div></div>
+                <div class="graha-meta-item" style="grid-column: span 2;"><div class="graha-meta-label">Domains</div><div class="graha-meta-value" style="font-size: 0.75rem; font-weight: 500;">${graha.domain}</div></div>
+              </div>
+            </div>
+            <div class="graha-remedies-box">
+              <div class="remedies-title">✦ 3 Remedies for Planetary Harmony</div>
+              <ol class="remedies-list">
+                <li>${graha.remedies[0]}</li>
+                <li>${graha.remedies[1]}</li>
+                <li>${graha.remedies[2]}</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    let activeBhava = 1;
+    function updateBhavaDetails(number) {
+      activeBhava = number;
+      const svgButtons = document.querySelectorAll('.kundali-house-btn');
+      svgButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (parseInt(btn.getAttribute('data-house'), 10) === number) {
+          btn.classList.add('active');
+        }
+      });
+      
+      const houseData = BHAVAS_DATA.find(h => h.number === number);
+      const panel = document.getElementById('bhava-detail-panel');
+      if (!panel || !houseData) return;
+      
+      const goalClass = `goal-${houseData.category.toLowerCase()}`;
+      panel.innerHTML = `
+        <div class="glass-card bhava-detail-card" style="animation: fadeIn 0.4s ease;">
+          <div class="bhava-title-row">
+            <div class="bhava-name-wrap">
+              <div class="bhava-number-badge">${houseData.number}</div>
+              <div>
+                <h3 class="bhava-sanskrit">${houseData.sanskrit}</h3>
+                <div class="bhava-english">${houseData.english}</div>
+              </div>
+            </div>
+            <span class="house-goal-badge ${goalClass}">${houseData.category}</span>
+          </div>
+          <p style="font-size: 1.05rem; font-family: var(--font-serif); font-style: italic; margin-bottom: 1.5rem;">"${houseData.alt}"</p>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 2rem;">${houseData.description}</p>
+          <div class="bhava-grid-stats">
+            <div class="bhava-stat-item"><div class="bhava-stat-label">Significator (Karaka)</div><div class="bhava-stat-val">${houseData.significator}</div></div>
+            <div class="bhava-stat-item"><div class="bhava-stat-label">Category Group</div><div class="bhava-stat-val">${houseData.category}</div></div>
+            <div class="bhava-stat-item" style="grid-column: span 2;"><div class="bhava-stat-label">Key Areas Covered</div><div class="bhava-stat-val" style="font-size: 0.8rem; line-height: 1.5;">${houseData.keyAreas}</div></div>
+          </div>
+        </div>
+      `;
+    }
+
+    let activeNakshatraFilter = "All";
+    function renderNakshatraFilters() {
+      const container = document.getElementById('nakshatras-filter-container');
+      if (!container) return;
+      
+      const planets = ["All", ...new Set(NAKSHATRAS_DATA.map(n => n.planet))];
+      container.innerHTML = planets.map(p => {
+        const activeClass = p === activeNakshatraFilter ? "active" : "";
+        return `<button class="filter-btn ${activeClass}" onclick="setNakshatraFilter('${p}')">${p}</button>`;
+      }).join('');
+    }
+
+    function setNakshatraFilter(planet) {
+      activeNakshatraFilter = planet;
+      renderNakshatraFilters();
+      renderNakshatrasGrid();
+    }
+
+    function renderNakshatrasGrid() {
+      const container = document.getElementById('nakshatras-grid-container');
+      if (!container) return;
+      
+      const filtered = activeNakshatraFilter === "All" 
+        ? NAKSHATRAS_DATA 
+        : NAKSHATRAS_DATA.filter(n => n.planet === activeNakshatraFilter);
+        
+      container.innerHTML = filtered.map(nak => `
+        <div class="glass-card" style="padding: 1.75rem;">
+          <div class="nak-card-header">
+            <div class="nak-id-badge">${nak.number}</div>
+            <span class="nak-rashi-tag">${nak.rashi}</span>
+          </div>
+          <div class="nak-title-box">
+            <h3 class="nak-sanskrit-name">${nak.sanskrit}</h3>
+            <div class="nak-translit-name">${nak.transliteration}</div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 1rem 0; line-height: 1.6;">${nak.about}</p>
+          <div class="nak-body">
+            <div class="nak-meta-row"><span class="nak-meta-label">Meaning:</span><span class="nak-meta-val" style="font-style: italic;">${nak.meaning}</span></div>
+            <div class="nak-meta-row"><span class="nak-meta-label">Deity:</span><span class="nak-meta-val">${nak.deity}</span></div>
+            <div class="nak-meta-row"><span class="nak-meta-label">Ruler:</span><span class="nak-meta-val" style="color: var(--accent-color); font-weight: 600;">${nak.planet}</span></div>
+            <div class="nak-meta-row"><span class="nak-meta-label">Symbol:</span><span class="nak-meta-val">${nak.symbol}</span></div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderWisdom() {
+      const container = document.getElementById('wisdom-topics-container');
+      if (!container) return;
+      
+      container.innerHTML = WISDOM_DATA.map(topic => `
+        <div class="glass-card wisdom-topic-card">
+          <div class="wisdom-topic-header">
+            <div class="wisdom-topic-sanskrit">${topic.sanskrit}</div>
+            <h2 class="wisdom-topic-title">${topic.title}</h2>
+            <p class="wisdom-topic-desc">${topic.summary}</p>
+          </div>
+          <div class="wisdom-subgrid">
+            ${topic.items.map(item => `
+              <div class="wisdom-point-box">
+                <h4 class="wisdom-point-title">${item.h}</h4>
+                <p class="wisdom-point-body">${item.b}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderNumerology() {
+      const container = document.getElementById('numerology-cards-container');
+      if (!container) return;
+      
+      container.innerHTML = NUMEROLOGY_DATA.map(num => `
+        <div class="glass-card" id="num-card-${num.number}">
+          <div class="num-card-header">
+            <div class="num-circle">${num.number}</div>
+            <span class="num-ruler-tag">Ruler: ${num.planet}</span>
+          </div>
+          <p class="num-traits"><strong>Archetypes:</strong> ${num.traits}</p>
+          <div class="num-metas">
+            <div class="num-meta-row"><span class="num-meta-label">Lucky Colors:</span><span class="num-meta-val">${num.colors}</span></div>
+            <div class="num-meta-row"><span class="num-meta-label">Gemstone:</span><span class="num-meta-val">${num.gemstones}</span></div>
+            <div class="num-meta-row"><span class="num-meta-label">Metal:</span><span class="num-meta-val">${num.metal}</span></div>
+            <div class="num-meta-row"><span class="num-meta-label">Lucky Day:</span><span class="num-meta-val" style="color: var(--accent-color); font-weight: 600;">${num.day}</span></div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Numerology Calculator Logic (Birth Day Number Only)
+    function calculateNumerology() {
+      const dayInput = document.getElementById('birth-day-input').value;
+      const resultDiv = document.getElementById('numerology-result-container');
+      if (!resultDiv) return;
+      if (!dayInput) {
+        resultDiv.innerHTML = `<p style="font-size: 0.85rem; color: var(--text-secondary); font-style: italic;">Enter day above to reveal birth number...</p>`;
+        return;
+      }
+      
+      const dayNum = parseInt(dayInput, 10);
+      if (isNaN(dayNum) || dayNum < 1 || dayNum > 31) {
+        resultDiv.innerHTML = `<p style="font-size: 0.85rem; color: #ff5252; font-weight: 500;">Enter a day between 1 and 31</p>`;
+        return;
+      }
+      
+      // Function to sum digits recursively
+      function getSingleDigitSum(numberStr) {
+        let sum = 0;
+        for (let char of numberStr) {
+          sum += parseInt(char, 10);
+        }
+        if (sum > 9) {
+          return getSingleDigitSum(sum.toString());
+        }
+        return sum;
+      }
+      
+      const finalNum = getSingleDigitSum(dayInput.toString());
+      const matchedData = NUMEROLOGY_DATA.find(n => n.number === finalNum);
+      
+      // Render calculated result box
+      resultDiv.innerHTML = `
+        <div style="animation: fadeIn 0.4s ease; margin-top: 1.5rem;">
+          <div class="calc-result-number">${finalNum}</div>
+          <div class="calc-result-desc">Your Birth Number (Ruling Number)</div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">
+            Ruled by <strong>${matchedData.planet}</strong>. Key traits: ${matchedData.traits}.
+          </p>
+          <button class="btn-premium" style="padding: 0.5rem 1.25rem; font-size: 0.75rem; margin-top: 1rem;" onclick="scrollToNumCard(${finalNum})">
+            Scroll to Card
+          </button>
+        </div>
+      `;
+    }
+
+    function scrollToNumCard(num) {
+      const card = document.getElementById(`num-card-${num}`);
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        card.style.borderColor = "var(--accent-color)";
+        card.style.boxShadow = "0 0 30px var(--accent-glow)";
+        setTimeout(() => {
+          card.style.borderColor = "";
+          card.style.boxShadow = "";
+        }, 2000);
+      }
+    }
+
+    function renderBlog() {
+      const container = document.getElementById('blog-post-container');
+      if (!container) return;
+      
+      container.innerHTML = `
+        <div class="glass-card blog-post-card">
+          <div class="blog-meta-data">
+            <span>${BLOG_DATA.category}</span>
+            <span>•</span>
+            <span>${BLOG_DATA.date}</span>
+            <span>•</span>
+            <span>By ${BLOG_DATA.author}</span>
+          </div>
+          <h2 class="blog-post-title">${BLOG_DATA.title}</h2>
+          <div class="blog-rich-content">
+            ${BLOG_DATA.content}
+          </div>
+        </div>
+      `;
+    }
+
+    // --- LIFE CYCLE BOOTSTRAP ---
+    window.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      renderRashis();
+      renderGrahas();
+      updateBhavaDetails(1);
+      renderNakshatraFilters();
+      renderNakshatrasGrid();
+      renderWisdom();
+      renderNumerology();
+      renderBlog();
+    });
+  </script>
+</body>
+</html>
